@@ -48,6 +48,6 @@ app.get('/:id', function (req,res){
     })
 })
 
-app.listen(process.env.PORT || 3000, function(err, thePort){
+app.listen(process.env.PORT || 0.0.0.0, function(err, thePort){
    console.log(this.address().port)  
 })
