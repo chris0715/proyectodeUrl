@@ -48,4 +48,6 @@ app.get('/:id', function (req,res){
     })
 })
 
-app.listen(8080)
+app.listen(process.env.port, function(err, thePort){
+   console.log(this.address().port)  
+})
