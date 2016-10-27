@@ -22,6 +22,8 @@ app.get('/new/*', function (req,res){
 
     if(parametro.match(regex)){
     mongo.connect(urlconexion, function (err,db){
+        if(err)
+            res.send("no such thing as a database");
         
         db.collection('paginas').insert({'urlpagina':parametro},function(err,data){
             var id = data.ops[0]._id;
